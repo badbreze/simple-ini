@@ -6,7 +6,7 @@
  * @version     1.0
  */
  
-namespace Badbreze\SimpleIni;
+namespace Badbreze\Ini;
 
 class SimpleIni
 {
