@@ -28,7 +28,7 @@ class SimpleIni
      * @param string $ini_file path to the ini file
      * @throws Exception
      */
-    public function __construct(string $ini_file = null)
+    public function __construct($ini_file = null)
     {
         if (!$ini_file) {
             throw new Exception("Please select one ini file");
