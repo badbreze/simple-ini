@@ -2,7 +2,7 @@
 /**
  * Small util to read and write .ini files
  *
- * @author      Damian Gomez <damian.gomez@elitedivision.it>
+ * @author      Damian Gomez
  * @version     1.0
  */
  
