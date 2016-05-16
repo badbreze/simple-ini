@@ -31,11 +31,11 @@ class SimpleIni
     public function __construct($ini_file = null)
     {
         if (!$ini_file) {
-            throw new Exception("Please select one ini file");
+            throw new Hoa\Exception\Exception("Please select one ini file");
         }
 
         if (!file_exists($ini_file)) {
-            throw new Exception("This file does not exists: " . $ini_file);
+            throw new Hoa\Exception\Exception("This file does not exists: " . $ini_file);
         }
 
         //Set ini location
@@ -63,10 +63,10 @@ class SimpleIni
                     $var = $this->iniArray[$section][$variable];
                     return is_numeric($var) ? (int) $var : $var;
                 } else {
-                    throw new Exception("This vasiavle does not exists: " . $variable);
+                    throw new Hoa\Exception\Exception("This vasiavle does not exists: " . $variable);
                 }
             } else {
-                throw new Exception("The section soes not exists: " . $section);
+                throw new Hoa\Exception\Exception("The section soes not exists: " . $section);
             }
             //verifico di avere almeno la variabile
         } elseif (!empty($variable)) {
@@ -77,9 +77,9 @@ class SimpleIni
                 }
             }
 
-            throw new Exception("The variable does not exists: " . $variable);
+            throw new Hoa\Exception\Exception("The variable does not exists: " . $variable);
         } else {
-            throw new Exception("Please select the variable name");
+            throw new Hoa\Exception\Exception("Please select the variable name");
         }
     }
 
@@ -99,10 +99,10 @@ class SimpleIni
                 $this->write_php_ini();
                 return true;
             } else {
-                throw new Exception("La variabile non esiste, e di default non viene creata, creala nel file .ini e riprova: ". $variable);
+                throw new Hoa\Exception\Exception("La variabile non esiste, e di default non viene creata, creala nel file .ini e riprova: ". $variable);
             }
         } else {
-            throw new Exception("Devi indicare il nome della sezione e della variabile per proseguire");
+            throw new Hoa\Exception\Exception("Devi indicare il nome della sezione e della variabile per proseguire");
         }
     }
 
@@ -118,10 +118,10 @@ class SimpleIni
             if (isset($this->iniArray[$section])) {
                 return $this->iniArray[$section];
             } else {
-                throw new Exception("Non esiste la sezione: " . $section);
+                throw new Hoa\Exception\Exception("Non esiste la sezione: " . $section);
             }
         } else {
-            throw new Exception("Devi passare un nome di sezione valido per poterla cercare nel .ini");
+            throw new Hoa\Exception\Exception("Devi passare un nome di sezione valido per poterla cercare nel .ini");
         }
     }
 
@@ -138,7 +138,7 @@ class SimpleIni
                      if (isset($this->iniArray[$section][$key])) {
                          $this->iniArray[$section][$key] = $val;
                      } else {
-                         throw new Exception("Il seguente nodo non esiste e non viene creato di default: " . $key);
+                         throw new Hoa\Exception\Exception("Il seguente nodo non esiste e non viene creato di default: " . $key);
                      }
                 }
 
@@ -146,10 +146,10 @@ class SimpleIni
 
                 return true;
             } else {
-                throw new Exception("Non esiste la sezione: " . $section);
+                throw new Hoa\Exception\Exception("Non esiste la sezione: " . $section);
             }
         } else {
-            throw new Exception("Devi passare il nome della sezione e l'array con i valori da assegnare");
+            throw new Hoa\Exception\Exception("Devi passare il nome della sezione e l'array con i valori da assegnare");
         }
     }
 
