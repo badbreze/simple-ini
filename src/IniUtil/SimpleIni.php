@@ -3,10 +3,10 @@
  * Small util to read and write .ini files
  *
  * @author      Damian Gomez
- * @version     1.0
+ * @license http://www.gnu.org/licenses/gpl-3.0.html GPL v3 or later
  */
  
-namespace Badbreze\Ini;
+namespace IniUtil;
 
 class SimpleIni
 {
